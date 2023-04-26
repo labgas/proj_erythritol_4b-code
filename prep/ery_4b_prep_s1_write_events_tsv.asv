@@ -144,24 +144,29 @@ if ~isempty(subjs2write)
                         end
                         
                     log.rating = zeros(height(log),1);
-                      
-                    for l = 1:height(log)
-                        
-                        if contains(char(log.EventType(l)),'Nothing','IgnoreCase',true)
-                            scorestring = char(log.Code(l));
+                    
+                        for l = 1:height(log)
                             
-                            log.rating(l) = str2double(regexp(scorestring,'[-+]?\d{1,3}$','match','once'));
+                          if contains(char(log.Code(l)),'score','IgnoreCase',true)
+                                scorestring = char(log.Code(l));
+                                
+                                if strcmp(scorestring(end-3:end),'-100')
+                                    log.rating(l) = str2double(regexp(scorestring,));
+                                
+                                elseif ~contains(scorestring(end-2:end))
+                                    log.rating(l) = str2double(extract(scorestring,end-2:end));
+                                
+                                else
+                                    log.rating(l) = str2double(extract(scorestring,end-1:end));
+                                    
+                                end
                             
-                         %elseif  contains(char(log.Code(l)),'-100') % most likely script already excluded -100
-                          %log.rating(l) = str2double('-100');
-                            
-                          
-                        else
-                            log.rating(l) = NaN;
+                            else
+                                log.rating(l) = NaN;
+                                
+                            end
                             
                         end
-                        
-                    end
                         
                     log.trial_type = categorical(log.trial_type);
                     
@@ -286,23 +291,28 @@ else
                     
                     log.rating = zeros(height(log),1);
                     
-                    for l = 1:height(log)
-                        
-                        if contains(char(log.EventType(l)),'Nothing','IgnoreCase',true)
-                            scorestring = char(log.Code(l));
+                        for l = 1:height(log)
                             
-                                log.rating(l) = str2double(regexp(scorestring,'[-+]?\d{1,3}$','match','once'));
+                          if contains(char(log.Code(l)),'score','IgnoreCase',true)
+                                scorestring = char(log.Code(l));
+                                
+                                if strcmp(scorestring(end-3:end),'-100')
+                                    log.rating(l) = str2double(extract(scorestring,end-3:end));
+                                
+                                elseif ~contains(scorestring(end-2:end))
+                                    log.rating(l) = str2double(extract(scorestring,end-2:end));
+                                
+                                else
+                                    log.rating(l) = str2double(extract(scorestring,end-1:end));
+                                    
+                                end
                             
-                        %elseif  contains(char(log.Code(l)),'-100') % most likely script already excluded -100 
-                                 %log.rating(l) = str2double('-100');
+                            else
+                                log.rating(l) = NaN;
+                                
+                           end
                             
-                            
-                        else
-                            log.rating(l) = NaN;
-                            
-                        end
-                        
-                    end
+                         end
                         
                     log.trial_type = categorical(log.trial_type);
                     
