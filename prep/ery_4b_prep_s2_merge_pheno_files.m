@@ -18,8 +18,8 @@
 
 %% READ OFFLINE FILE
 
-varNames = {'trial_type','participant_id','hunger','intensity','liking'};
-varTypes = {'categorical','categorical','double','double','double'};
+varNames = {'trial_type','participant_id','concentration','intensity','hunger','liking'};
+varTypes = {'categorical','categorical','double','double','double','double'};
 delimiter = '\t';
 filetype = 'text';
 datastartline = 2;
