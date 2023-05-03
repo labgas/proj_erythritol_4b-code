@@ -1,4 +1,4 @@
-%% ery_4b_firstlevel_m6_s2_fit_model.m
+%% ery_4b_firstlevel_m1_s2_fit_model.m
 %
 % This script does everything to fit and diagnose first level models,
 % more specifically
@@ -226,7 +226,7 @@ firstsubjs = cellstr(char(firstlist(:).name));
 %% LOOP OVER SUBJECTS
 %--------------------------------------------------------------------------
 
-for sub=1:size(derivsubjs,1)
+for sub=1%:size(derivsubjs,1)
     
     %% DEFINE SUBJECT LEVEL DIRS & FILENAMES
     

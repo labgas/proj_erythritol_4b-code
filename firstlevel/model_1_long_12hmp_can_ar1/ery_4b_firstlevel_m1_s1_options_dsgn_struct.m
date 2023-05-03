@@ -276,12 +276,12 @@ githubrootdir = '/data/master_github_repos';
     % arrays (one cell per condition) of MAT-file names, in fixed order:
     % all conditions of interest first, conditions of no interest last
     c=0;
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
-    c=c+1;DSGN.conditions{c}={'sucrose_high' 'sucrose_low' 'erythritol_high' 'erythritol_low' 'water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
+    c=c+1;DSGN.conditions{c}={'Sucrose high calorie' 'Sucrose low calorie' 'Erythritol high calorie' 'Erythritol low calorie' 'Water' 'rating' 'swallow_rinse'};
     
     % OPTIONAL FIELDS
     
@@ -327,21 +327,21 @@ githubrootdir = '/data/master_github_repos';
     % unmodulated contrasts
     c=0;
     c=c+1;
-    DSGN.contrasts{c} = {{'.*sucrose_high{1}\s[^x]'}}; % CON_0001; this regexp will select any beta regressor starting with "sucrose high", followed by exactly one white space, but not followed by x - which is only the unmodulated regressors for the sucrose high calorie label condition
+    DSGN.contrasts{c} = {{'.*Sucrose{1}\shigh{1}\s[^x]'}}; % CON_0001; this regexp will select any beta regressor starting with "sucrose high", followed by exactly one white space, but not followed by x - which is only the unmodulated regressors for the sucrose high calorie label condition
     c=c+1;
-    DSGN.contrasts{c} = {{'.*sucrose_low{1}\s[^x]'}}; % CON_0002
+    DSGN.contrasts{c} = {{'.*Sucrose{1}\slow{1}\s[^x]'}}; % CON_0002
     c=c+1;
-    DSGN.contrasts{c} = {{'.*erythritol_high{1}\s[^x]'}}; % CON_0003
+    DSGN.contrasts{c} = {{'.*Erythritol{1}\shigh{1}\s[^x]'}}; % CON_0003
     c=c+1;
-    DSGN.contrasts{c} = {{'.*erythritol_low{1}\s[^x]'}}; % CON_0004
+    DSGN.contrasts{c} = {{'.*Erythritol{1}\slow{1}\s[^x]'}}; % CON_0004
     c=c+1;
-    DSGN.contrasts{c} = {{'.*water{1}\s[^x]'}}; % CON_0005
+    DSGN.contrasts{c} = {{'.*Water{1}\s[^x]'}}; % CON_0005
     c=c+1;
-    DSGN.contrasts{c} = {{'.*sucrose_high{1}\s[^x]'} {'.*sucrose_low{1}\s[^x]'} {'.*erythritol_high{1}\s[^x]'} {'.*erythritol_low{1}\s[^x]'}}; % CON_0006
+    DSGN.contrasts{c} = {{'.*Sucrose{1}\shigh{1}\s[^x]'} {'.*Sucrose{1}\slow{1}\s[^x]'} {'.*Erythritol{1}\shigh{1}\s[^x]'} {'.*Erythritol{1}\slow{1}\s[^x]'}}; % CON_0006
     c=c+1;
-    DSGN.contrasts{c} = {{'.*sucrose_high{1}\s[^x]'} {'.*sucrose_low{1}\s[^x]'} {'.*erythritol_high{1}\s[^x]'} {'.*erythritol_low{1}\s[^x]'}}; % CON_0007
+    DSGN.contrasts{c} = {{'.*Sucrose{1}\shigh{1}\s[^x]'} {'.*Sucrose{1}\slow{1}\s[^x]'} {'.*Erythritol{1}\shigh{1}\s[^x]'} {'.*Erythritol{1}\slow{1}\s[^x]'}}; % CON_0007
     c=c+1;
-    DSGN.contrasts{c} = {{'.*sucrose_high{1}\s[^x]'} {'.*sucrose_low{1}\s[^x]'} {'.*erythritol_high{1}\s[^x]'} {'.*erythritol_low{1}\s[^x]'}}; % CON_0008
+    DSGN.contrasts{c} = {{'.*Sucrose{1}\shigh{1}\s[^x]'} {'.*Sucrose{1}\slow{1}\s[^x]'} {'.*Erythritol{1}\shigh{1}\s[^x]'} {'.*Erythritol{1}\slow{1}\s[^x]'}}; % CON_0008
   
     
     % OPTIONAL FIELDS
