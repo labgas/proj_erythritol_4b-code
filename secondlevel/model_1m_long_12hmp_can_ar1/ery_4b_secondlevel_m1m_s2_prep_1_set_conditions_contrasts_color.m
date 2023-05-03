@@ -1,4 +1,4 @@
-%% ery_4a_secondlevel_m6m_s2_prep_1_set_conditions_contrasts_color.m
+%% ery_4b_secondlevel_m1m_s2_prep_1_set_conditions_contrasts_color.m
 %
 % CANLAB NOTES:
 % - Modify to specify image file subdirectories, wildcards to locate images, condition names
@@ -127,7 +127,7 @@ DAT.subfolders = {'*' '*' '*' '*'}; % @lukasvo76: default option for Linux OS, o
 % condition. 
 
 DAT.structural_wildcard = {};
-DAT.functional_wildcard = {'con_0001.nii' 'con_0002.nii' 'con_0003.nii' 'con_0004.nii'}; %lukavo76: default option for Linux OS
+DAT.functional_wildcard = {'con_0001.nii' 'con_0002.nii' 'con_0003.nii' 'con_0004.nii' 'con_0005.nii'}; %lukavo76: default option for Linux OS
 % DAT.functional_wildcard = {'^con_0001.*\nii$' '^con_0002.*\nii$' '^con_0003.*\nii$' '^con_0004.*\nii$'}; %lukavo76: fallback option for Windows OS, spm_select uses regular expression to filter (like in the GUI)
 
 
@@ -164,12 +164,12 @@ DAT.functional_wildcard = {'con_0001.nii' 'con_0002.nii' 'con_0003.nii' 'con_000
 % sets of images, where the ith image is from the ith subject for all
 % conditions).
 
-DAT.contrasts = [1 -1 1 -1 0; 1 1 -1 -1 0; 1 -1 -1 1 0; 1 0 1 0 -1; 0 1 0 1 -1; 1 1 0 0 -1; 0 0 1 1 -1];
+DAT.contrasts = [1 -1 1 -1 0; 1 1 -1 -1 0; 1 -1 -1 1 0; 0.5 0 0.5 0 -1; 0 0.5 0 0.5 -1; 0.5 0.5 0 0 -1; 0 0 0.5 0.5 -1];
     
 % Descriptive names for contrasts to be used in plots and tables. Avoid
 % special characters.
-DAT.contrastnames = {'sucrose vs sucralose' 'sucrose vs erythritol' 'erythritol vs sucralose' 'sucrose vs water' 'erythritol vs water' 'sucralose vs water'};
-DaT.contrastnames = {'high calorie vs low calorie label' 'sucrose vs erythrtiol' 'interaction label * substance' 'high calorie label vs water' 'low calorie label versus water' 'sucrose vs water' 'erythritol vs water'};
+DAT.contrastnames = {'high calorie vs low calorie label' 'sucrose vs erythritol' 'interaction label * substance' 'high calorie label vs water' 'low calorie label versus water' 'sucrose vs water' 'erythritol vs water'};
+
 DAT.contrastnames = format_strings_for_legend(DAT.contrastnames);
 
 

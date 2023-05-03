@@ -1,4 +1,4 @@
-%% ery_4a_secondlevel_m6m_s1_a2_set_default_options.m
+%% ery_4b_secondlevel_m1m_s1_a2_set_default_options.m
 %
 %
 % USAGE
@@ -60,7 +60,7 @@ atlasname_glm = which('ery_4a_m6_mask_all_regions.mat');
 myscaling_glm = 'raw';              % 'raw', 'scaled', or 'scaledcontrasts'; 
                                     % 'scaled': use z-scored condition images prior to computing contrasts
                                     % 'scaled_contrasts': l2norm contrasts after computing them
-design_matrix_type = 'custom';      % 'group', 'custom', or 'onesample'
+design_matrix_type = 'onesample';  % 'group', 'custom', or 'onesample'
                                     % 'group': use DAT.BETWEENPERSON.group or 
                                     % DAT.BETWEENPERSON.contrasts{c}.group;
                                     % @lukasvo76: compare groups without controlling for covariates
@@ -72,11 +72,11 @@ design_matrix_type = 'custom';      % 'group', 'custom', or 'onesample'
                                     % one sample t-test with robust option
                                     % (contrary to c_univariate_contrast_maps.m)
 dorobust = true;                    % robust statistics for voxel-based GLM [true, false] -- default true
-%? dorobfit_parcelwise = false;        % true runs robust parcelwise regression (CANlab's robfit_parcelwise() function) rather than voxel-based GLM (CANlab's regress() function)
+dorobfit_parcelwise = false;        % true runs robust parcelwise regression (CANlab's robfit_parcelwise() function) rather than voxel-based GLM (CANlab's regress() function)
     % robfit_parcelwise options
     csf_wm_covs = false;                % true adds global wm & csf regressors at second level
     remove_outliers = false;            % true removes outlier images/subjects based on mahalanobis distance 
-%? doBayes = true;                     % converts t-maps into Bayes Factor maps -- default true
+doBayes = true;                     % converts t-maps into Bayes Factor maps -- default true
 domvpa_reg_cov = false;             % run MVPA regression model to predict covariate levels from (between-subject) brain data using CANlab's predict() function
     % mvpa_reg_covariate options
     algorithm_mvpa_reg_cov = 'cv_pcr';              % default cv_pcr, will be passed into predict function (help fmri_data.predict for options)
