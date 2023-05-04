@@ -1,4 +1,4 @@
-%% c2a_second_level_regression.m
+%% ery_4b_secondlevel_m1m_s7_c2a_second_level_regression.m
 %
 %
 % *USAGE*
@@ -91,7 +91,7 @@
 
 % GET MODEL-SPECIFIC PATHS AND OPTIONS
 
-a_set_up_paths_always_run_first;
+ery_4b_secondlevel_m1m_s0_a_set_up_paths_always_run_first;
 
 % NOTES 
 %   1. CHANGE THIS TO THE MODEL-SPECIFIC VERSION OF THIS SCRIPT
@@ -113,7 +113,7 @@ results_suffix = ''; % suffix of your choice added to .mat file with saved resul
 % Custom options from prep_3a script
 
 % dorobust = true/false;
-% dorobfit_parcelwise = true/false;
+dorobfit_parcelwise = true;
 %   csf_wm_covs = true/false;
 %   remove_outliers = true/false;
 % atlasname_glm = 'atlas_name';

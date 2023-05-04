@@ -1,4 +1,4 @@
-%% prep_3a_run_second_level_regression_and_save.m
+%% ery_4b_secondlevel_m1m_s6_prep_3a_run_second_level_regression_and_save.m
 %
 %
 % *USAGE*
@@ -177,7 +177,7 @@ results_suffix = ''; % adds a suffix of your choice to .mat file with results th
 
 % GET MODEL-SPECIFIC PATHS AND OPTIONS
 
-a_set_up_paths_always_run_first;
+ery_4b_secondlevel_m1m_s0_a_set_up_paths_always_run_first;
 
 % NOTES 
 %   1. CHANGE THIS TO THE MODEL-SPECIFIC VERSION OF THIS SCRIPT
@@ -203,7 +203,7 @@ plugin_get_options_for_analysis_script;
 % maskname_glm = 'mask_name';
 % atlasname_glm = 'atlas_name';
 % dorobust = true/false;
-% dorobfit_parcelwise = true/false;
+dorobfit_parcelwise = true;
 %   csf_wm_covs = true/false;
 %   remove_outliers = true/false;
 % myscaling_glm = 'raw'/'scaled'/'scaled_contrasts';
