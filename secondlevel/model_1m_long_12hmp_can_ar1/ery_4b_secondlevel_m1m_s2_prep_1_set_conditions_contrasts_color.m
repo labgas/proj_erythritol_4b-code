@@ -118,7 +118,7 @@ DAT.conditions = format_strings_for_legend(DAT.conditions);
 % condition. 
 % If you do not have subfolders, it is OK to leave this empty, i.e., DAT.subfolders = {};
 
-DAT.subfolders = {'*' '*' '*' '*'}; % @lukasvo76: default option for Linux OS, one wildcard per condition
+DAT.subfolders = {'*' '*' '*' '*' '*'}; % @lukasvo76: default option for Linux OS, one wildcard per condition
 % DAT.subfolders = {}; % @lukasvo76 fallback option for Windows OS, uses recursive spm_select in prep_2 script to select right con images
 
 % Names of wildcard (expression with *, [1-9], 
@@ -224,3 +224,16 @@ disp('SET up conditions, colors, contrasts in DAT structure.');
 % DAT.between_condition_contrastnames = {'Pain vs Nausea' 'Pain vs Itch'};
 %           
 % DAT.between_condition_contrastcolors = custom_colors ([.2 .2 .8], [.2 .8 .2], size(DAT.between_condition_cons, 1));
+
+if isfield(DAT, 'SIG_conditions') && isfield(DAT, 'gray_white_csf')
+    % Looks complete, we already have data, no warnings 
+else
+    printhdr('DAT structure ready for data prep');
+    disp('DAT field does not have info from prep_2, prep_3, or prep_4 sequences');
+    disp('prep_2/3/4 scripts should be run before generating results.');
+end
+
+printhdr('Save DSGN & DAT structures and directory names in image_names_and_setup.mat');
+
+savefilename = fullfile(resultsdir, 'image_names_and_setup.mat');
+save(savefilename, 'dashes','printstr','printhdr','DSGN', 'DAT', 'basedir', 'datadir', 'maskdir', 'resultsdir', 'scriptsdir', 'figsavedir', 'htmlsavedir', '-v7.3');
